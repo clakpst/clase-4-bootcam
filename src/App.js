@@ -1,10 +1,27 @@
-import "./styles.css";
+const notes = [
+  {
+    id: 1,
+    content: "HTML is easy",
+    important: true,
+  },
+  {
+    id: 2,
+    content: "Browser can execute only JavaScript",
+    important: false,
+  },
+  {
+    id: 3,
+    content: "GET and POST are the most important methods of HTTP protocol",
+    important: true,
+  },
+];
 
 export default function App() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+    <div>
+      {notes.map((note) => {
+        return note.id;
+      })}
     </div>
   );
 }
