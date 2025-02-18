@@ -1,16 +1,17 @@
+import Nota from "./Note";
 const notes = [
   {
-    id: 1,
+    id: 13,
     content: "HTML is easy",
     important: true,
   },
   {
-    id: 2,
+    id: 27,
     content: "Browser can execute only JavaScript",
     important: false,
   },
   {
-    id: 3,
+    id: 38,
     content: "GET and POST are the most important methods of HTTP protocol",
     important: true,
   },
@@ -20,7 +21,7 @@ export default function App() {
   return (
     <div>
       {notes.map((note) => {
-        return note.id;
+        return <Nota content={note.content} key={note.id} />;
       })}
     </div>
   );
