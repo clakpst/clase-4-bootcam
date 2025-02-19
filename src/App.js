@@ -9,7 +9,8 @@ export default function App(props) {
     setNewNote(event.target.value);
   };
 
-  const handleClick = (event) => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     const noteToAddToState = {
       id: notes.length + 1,
       content: newNote,
@@ -24,10 +25,10 @@ export default function App(props) {
       {notes.map((note) => {
         return <Nota content={note.content} key={note.id} />;
       })}
-      <div>
+      <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleChange} value={newNote} />
-        <button onClick={handleClick}>Crear nota</button>
-      </div>
+        <button>Crear nota</button>
+      </form>
     </div>
   );
 }
